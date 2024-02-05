@@ -1,6 +1,11 @@
 const express = require('express');
+const cors = require('cors');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Разрешить все источники (*), вы можете настроить это для конкретных доменов
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.send('Hello, Express on Google Cloud!');
